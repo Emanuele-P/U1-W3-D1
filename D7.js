@@ -211,21 +211,51 @@ const movies = [
   Scrivi una funzione per trovare il film più vecchio nell'array fornito.
 */
 
+const ex9 = (movies) => {
+  let oldest = movies[0]
+  movies.forEach((movie) => {
+    if (movies.Year < oldest.Year) {
+      oldest = movie
+    }
+  })
+  return oldest
+}
+console.log(ex9(movies))
+//doesnt work
+
 /* ESERCIZIO 10
   Scrivi una funzione per ottenere il numero di film contenuti nell'array fornito.
 */
+
+const ex10 = (movies) => {
+  return movies.length
+}
+console.log(ex10(movies))
 
 /* ESERCIZIO 11 (map)
   Scrivi una funzione per creare un array con solamente i titoli dei film contenuti nell'array fornito.
 */
 
+const ex11 = (movies) => {
+  return movies.map((movie) => movie.Title)
+}
+console.log(ex11(movies))
+
 /* ESERCIZIO 12 (filter)
   Scrivi una funzione per ottenere dall'array fornito solamente i film usciti nel millennio corrente.
 */
 
+const ex12 = (movies) => {
+  return movies.filter((movie) => movie.Year >= '2000')
+}
+console.log(ex12(movies))
+
 /* ESERCIZIO 13 (reduce)
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
+
+const ex13 = (movies) => {}
+console.log(ex13(movies))
 
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
