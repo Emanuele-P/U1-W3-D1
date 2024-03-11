@@ -214,7 +214,7 @@ const movies = [
 const ex9 = (movies) => {
   let oldest = movies[0]
   movies.forEach((movie) => {
-    if (movies.Year < oldest.Year) {
+    if (parseInt(movie.Year) < parseInt(oldest.Year)) {
       oldest = movie
     }
   })
@@ -254,13 +254,31 @@ console.log(ex12(movies))
   Scrivi una funzione per calcolare la somma di tutti gli anni in cui sono stati prodotti i film contenuti nell'array fornito.
 */
 
-const ex13 = (movies) => {}
+const ex13 = (movies) => {
+  const allMOvies = movies.reduce(
+    (accumulator, currentValue) => accumulator + parseInt(currentValue.Year),
+    0
+  )
+  return allMOvies
+}
 console.log(ex13(movies))
 
 /* ESERCIZIO 14 (find)
   Scrivi una funzione per ottenere dall'array fornito uno specifico film (la funzione riceve un imdbID come parametro).
 */
 
+const ex14 = (movies, id) => {
+  const specificMovie = movies.find((element) => element.imdbID === id)
+  return specificMovie
+}
+console.log(ex14(movies, 'tt0355702'))
+
 /* ESERCIZIO 15 (findIndex)
   Scrivi una funzione per ottenere dall'array fornito l'indice del primo film uscito nell'anno fornito come parametro.
 */
+
+const ex15 = (movies, year) => {
+  const specificYear = movies.find((element) => parseInt(element.Year) === year)
+  return specificYear
+}
+console.log(ex15(movies, 2001))
